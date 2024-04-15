@@ -73,5 +73,12 @@ Route::prefix('admin')->group(function () {
     Route::get('/logout', 'Admin\AccountController@logoutAdmin')->name('admin.logout');
 
 });
+    // ** Website Routes * /
+    Route::get('/home', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
+    Route::get('/tip_now', [App\Http\Controllers\Frontend\frontendController::class,'tipNow'])->name('website.tip_now');
+    Route::get('/about', [App\Http\Controllers\Frontend\frontendController::class,'about'])->name('website.about');
+    Route::get('/contact', [App\Http\Controllers\Frontend\frontendController::class,'contact'])->name('website.contact');
+
+    Route::get('/dashboard', [App\Http\Controllers\Frontend\frontendController::class,'teacher_dashboard']);
 
 
