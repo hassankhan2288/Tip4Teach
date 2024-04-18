@@ -78,6 +78,11 @@ Route::prefix('admin')->group(function () {
     Route::get('/tip_now', [App\Http\Controllers\Frontend\frontendController::class,'tipNow'])->name('website.tip_now');
     Route::get('/about', [App\Http\Controllers\Frontend\frontendController::class,'about'])->name('website.about');
     Route::get('/contact', [App\Http\Controllers\Frontend\frontendController::class,'contact'])->name('website.contact');
+    Route::get('/role', [App\Http\Controllers\Frontend\frontendController::class,'role'])->name('website.role');
+    Route::get('/teacher/signup', [App\Http\Controllers\Frontend\frontendController::class,'teacherSignup'])->name('website.teacher.signup');
+    Route::get('/tipper/signup', [App\Http\Controllers\Frontend\frontendController::class,'tipperSignup'])->name('website.tipper.signup');
+    Route::get('setup/tipper/account', [App\Http\Controllers\Frontend\frontendController::class,'tipperAccount'])->name('website.tipper.account');
+    Route::get('setup/teacher/account', [App\Http\Controllers\Frontend\frontendController::class,'teacherAccount'])->name('website.teacher.account');
 
     Route::get('/dashboard', [App\Http\Controllers\Frontend\frontendController::class,'teacher_dashboard']);
 

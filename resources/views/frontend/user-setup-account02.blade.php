@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-12 col-lg-3 mb-5 mb-lg-0">
                     <div class="upload-pic d-flex flex-column justify-content-center align-items-center  text-center">
-                        <img src="img/icons8-person-64 2.png" class="img-fluid " alt="profile-pic" id="teacher-picture">
+                        <img src="{{asset('frontend/img/icons8-person-64 2.png')}}" class="img-fluid " alt="profile-pic" id="teacher-picture">
                         <label for="input-file" class="main-btn mt-5">Upload a Picture </label>
                         <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
                     </div>

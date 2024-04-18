@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','Tip4Teach || Home')
+@section('title','Tip4Teach || Signup')
 @section('main-content')
     <!--tipper signin-->
     <section class="forget-pass">
@@ -7,7 +7,7 @@
             <div class="row d-flex align-content-center justify-content-center ">
                 <div class="col-lg-4 col-12">
                     <div class="signup-img">
-                        <img src="img/Green rec.png" class="img-fluid" alt="signin">
+                        <img src="{{asset('frontend/img/Green rec.png')}}" class="img-fluid" alt="signin">
                     </div>
                 </div>
                 <div class="col-lg-7 col-12">
@@ -27,7 +27,7 @@
                           </div>
                           <div class="col-12 mb-4 ">
                             <div class="banner w-100 text-center ">
-                              <a href="setup-account02.html" class='log-btn butn butn__new'><span>SIGN UP</span></a>
+                              <a href="{{route('website.teacher.account')}}" class='log-btn butn butn__new'><span>SIGN UP</span></a>
                             </div>
                           </div>
                           <div class="col-12 text-center mb-4">
