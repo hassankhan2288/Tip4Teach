@@ -31,7 +31,7 @@
                             </div>
                           </div>
                           <div class="col-12 text-center mb-4">
-                            <p class="form-text ">Already have an account? <a href="teacher-signin.html">Log In</a></p>
+                            <p class="form-text ">Already have an account? <a href="{{route('website.teacher.login')}}">Log In</a></p>
                           </div>
                         </div>
                     </form>

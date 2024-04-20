@@ -7,7 +7,7 @@
             <div class="row d-flex align-items-end justify-content-center ">
                 <div class="col-lg-4 col-12">
                     <div class="signup-img">
-                        <img src="img/Green rec (1).png" class="img-fluid" alt="signin">
+                        <img src="{{asset('frontend/img/Green rec (1).png')}}" class="img-fluid" alt="signin">
                     </div>
                 </div>
                 <div class="col-lg-6 col-12">

@@ -30,15 +30,14 @@ class frontendController extends Controller
     public function teacherSignup(){
         return view('frontend.teacher-signup');
     }
-    public function tipperSignup(){
-        return view('frontend.tipper-signup');
-    }
-    public function tipperAccount(){
-        return view('frontend.user-setup-account02');
-    }
-    public function teacherAccount(){
+    
+        public function teacherAccount(){
         return view('frontend.setup-account02');
     }
+    public function teacherLogin(){
+        return view('frontend.teacher-signin');
+    }
+   
     public function teacher_dashboard(){
         return view('frontend.list-received-tips');
     }

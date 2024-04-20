@@ -21,6 +21,12 @@ class RedirectIfAuthenticated
         if ($guard == "admin" && Auth::guard($guard)->check()) {
             return redirect(RouteServiceProvider::ADMIN);
         }
+        if ($guard == "tipper" && Auth::guard($guard)->check()) {
+            return redirect(RouteServiceProvider::TIPPER);
+        }
+        if ($guard == "teacher" && Auth::guard($guard)->check()) {
+            return redirect(RouteServiceProvider::TEACHER);
+        }
         
 
         return $next($request);

@@ -28,9 +28,15 @@
                 <div class="navbar-close-btn position-absolute d-block d-lg-none">
                     <img src="{{asset('frontend/img/close.svg')}}" class="img-fluid" alt=" ">
                 </div>
+                @if(\Auth::guard('tipper')->user())
+                <div class="banner">
+                    <a href="{{route('website.tipper.logout')}}" class='log-btn butn butn__new'><span>Logout</span></a>
+                </div>
+                @else
                 <div class="banner">
                     <a href="{{route('website.role')}}" class='log-btn butn butn__new'><span>LOGIN/ SIGNUP</span></a>
                 </div>
+                @endif
             </div>
         </div>
     </nav>

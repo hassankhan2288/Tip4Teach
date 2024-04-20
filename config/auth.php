@@ -52,15 +52,15 @@ return [
             'provider' => 'admins',
         ],
 
-        'branch' => [
+        'tipper' => [
             'driver' => 'session',
-            'provider' => 'branches',
+            'provider' => 'tippers',
         ]
         ,
 
-        'customer' => [
+        'teacher' => [
             'driver' => 'session',
-            'provider' => 'customers',
+            'provider' => 'teachers',
         ]
     ],
 
@@ -92,13 +92,13 @@ return [
             'model' => App\Admin::class,
         ],
 
-        'branches' => [
+        'tippers' => [
             'driver' => 'eloquent',
-            'model' => App\Branch::class,
+            'model' => App\User::class,
         ],
-        'customers' => [
+        'teachers' => [
             'driver' => 'eloquent',
-            'model' => App\Customer::class,
+            'model' => App\Teacher::class,
         ],
 
         // 'users' => [
