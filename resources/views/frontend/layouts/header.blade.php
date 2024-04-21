@@ -19,7 +19,7 @@
                         <a class="nav-link" href="{{route('website.tip_now')}}">Tip Now</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{route('website.about')}}">About Us</a>
+                        <a class="nav-link" href="{{route('website.about')}}">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('website.contact')}}">Contact Us</a>

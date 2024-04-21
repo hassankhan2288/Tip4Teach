@@ -11,13 +11,17 @@
                     </div>
                 </div>
                 <div class="col-lg-7 col-12">
-                    <form class="profile-form">
+                    <form action="{{route('website.teacher.signup.post')}}" method="post" class="profile-form">
+                      @csrf
                       <div class="section-title mb-4">
                         <h2>Create an Account as a Teacher</h2>
                       </div>
                         <div class="row">
                           <div class="col-12 mb-4">
-                            <input type="text" class="form-control" name="name" placeholder="Name">
+                            <input type="text" class="form-control" name="first_name" placeholder="First Name">
+                          </div>
+                          <div class="col-12 mb-4">
+                            <input type="text" class="form-control" name="last_name" placeholder="Last Name">
                           </div>
                           <div class="col-12 mb-4">
                             <input type="email" class="form-control" name="email" placeholder="Email">
@@ -27,7 +31,8 @@
                           </div>
                           <div class="col-12 mb-4 ">
                             <div class="banner w-100 text-center ">
-                              <a href="{{route('website.teacher.account')}}" class='log-btn butn butn__new'><span>SIGN UP</span></a>
+                              {{-- <a href="{{route('website.teacher.account')}}" class='log-btn butn butn__new'><span>SIGN UP</span></a> --}}
+                              <button type="submit" class='log-btn butn butn__new'><span>SIGN UP</span></button>
                             </div>
                           </div>
                           <div class="col-12 text-center mb-4">

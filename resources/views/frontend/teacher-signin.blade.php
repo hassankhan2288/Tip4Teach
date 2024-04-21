@@ -11,7 +11,8 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-12">
-                    <form class="profile-form">
+                    <form action="{{route('website.teacher.login.post')}}" method="post" class="profile-form">
+                      @csrf
                         <div class="section-title mb-4">
                           <h2>Log In as a Teacher</h2>
                           <p>Welcome back, you’ve been missed!</p>
@@ -34,7 +35,8 @@
                         </div>
                         <div class="col-12 mb-4">
                           <div class="banner w-100 text-center ">
-                            <a href="teacher-dashboard.html" class='log-btn butn butn__new'><span>LOGIN</span></a>
+                            {{-- <a href="teacher-dashboard.html" class='log-btn butn butn__new'><span>LOGIN</span></a> --}}
+                            <button class='log-btn butn butn__new'><span>LOGIN</span></button>
                           </div>
                         </div>
                         <div class="col-12 text-center ">

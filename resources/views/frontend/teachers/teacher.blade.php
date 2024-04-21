@@ -19,13 +19,8 @@
                 <div class="separator-breadcrumb border-top"></div>
                 @yield('content')
                 </div>
-                <!-- end of main-content -->
                 <!-- Footer Start -->
                 <div class="flex-grow-1"></div>
-
-                {{-- @include('frontend.layouts.footer') --}}
-                
-                <!-- fotter end -->
             </div>
         </div>
     {{-- </div> --}}

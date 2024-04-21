@@ -22,8 +22,8 @@ class Authenticate extends Middleware
             return $request->expectsJson() ? null : route('admin.login');
         }elseif(str_contains($uri, 'tipper')){
             return $request->expectsJson() ? null : route('website.tipper.login');
-        }elseif(str_contains($uri, 'customer')){
-            return $request->expectsJson() ? null : route('pos.login');
+        }elseif(str_contains($uri, 'teacher')){
+            return $request->expectsJson() ? null : route('website.teacher.login');
         }else{
             return $request->expectsJson() ? null : route('welcome');
         }
