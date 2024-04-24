@@ -74,6 +74,7 @@ Route::prefix('admin')->group(function () {
 
 });
     // ** Website Routes * /
+    Route::get('/', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
     Route::get('/home', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
     Route::get('/tip_now', [App\Http\Controllers\Frontend\frontendController::class,'tipNow'])->name('website.tip_now');
     Route::get('/about', [App\Http\Controllers\Frontend\frontendController::class,'about'])->name('website.about');
