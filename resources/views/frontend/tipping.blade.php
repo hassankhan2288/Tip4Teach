@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','Tip4Teach || Home')
+@section('title','Tip4Teach || Tipping')
 @section('main-content')
     <!--tipping-->
     <section class="tipping">
@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12 col-lg-6 mb-3 mb-lg-0">
                     <div class="teacher-img">
-                        <img src="img/tipping.png" class="img-fluid " alt="tipping-teacher">
+                        <img src="{{asset('frontend/img/tipping.png')}}" class="img-fluid " alt="tipping-teacher">
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
@@ -50,11 +50,11 @@
                             </div>
                             <h3 class="mb-2">Payment Method</h3>
                             <div class="payments">
-                                <a href="#"><img src="img/icons8-mastercard-48 3.svg" alt="mastercard"></a>
-                                <a href="#"><img src="img/icons8-visa-48 3.svg" alt="visa"></a>
-                                <a href="#"><img src="img/icons8-paypal-48 4.svg" alt="paypal"></a>
-                                <a href="#"><img src="img/icons8-stripe-48 3.svg" alt="stripe"></a>
-                                <a href="#"><img src="img/icons8-apple-pay-64 4.svg" alt="apple-pay"></a>
+                                <a href="#"><img src="{{asset('frontend/img/icons8-mastercard-48 3.svg')}}" alt="mastercard"></a>
+                                <a href="#"><img src="{{asset('frontend/img/icons8-visa-48 3.svg')}}" alt="visa"></a>
+                                <a href="#"><img src="{{asset('frontend/img/icons8-paypal-48 4.svg')}}" alt="paypal"></a>
+                                <a href="#"><img src="{{asset('frontend/img/icons8-stripe-48 3.svg')}}" alt="stripe"></a>
+                                <a href="#"><img src="{{asset('frontend/img/icons8-apple-pay-64 4.svg')}}" alt="apple-pay"></a>
                             </div>
                         </div>
                     </div>

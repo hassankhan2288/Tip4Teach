@@ -32,7 +32,7 @@ class tipperController extends Controller
             $request->profile_image->move(public_path('images'), $imageName);
     
             $user->update([
-                'profile_image' => 'images/' . $imageName,
+                'profile_image' =>  $imageName,
             ]);
         }
     
@@ -83,23 +83,7 @@ class tipperController extends Controller
             return redirect()->route('website.home');
         }
     }
-    public function tipperLogin(){
-        return view('frontend.tipper-signin');
-    }
-    public function tipperLoginPost(Request $request){
-
-        // dd($request->all());
-        $this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required|min:6'
-        ]);
-
-        if (auth::guard('tipper')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-
-            return redirect()->intended('/home');
-        }
-        return back()->withInput($request->only('email', 'remember'));
-    }
+    
     public function tipperLogout(Request $request)
     {
         Auth::logout();
