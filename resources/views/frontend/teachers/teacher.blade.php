@@ -23,6 +23,8 @@
                 <div class="flex-grow-1"></div>
             </div>
         </div>
+
+        
     {{-- </div> --}}
 
     @include('frontend.layouts.footer')

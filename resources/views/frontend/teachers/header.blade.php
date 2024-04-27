@@ -1,5 +1,3 @@
-<div class="main-header">
-
 <div class="dash-header">
     <div class="dash-title position-relative ">
         <h3>TEACHER lIST OF RECIEVED TIPS</h3>
@@ -15,4 +13,3 @@
     </div>
 </div>
 <h5 class="sayhi"><img src="{{asset('frontend/img/waving-hand-sign_1f44b 1.png')}}" alt="waving-hand-sign">Hey Esthera!</h5>
-</div>

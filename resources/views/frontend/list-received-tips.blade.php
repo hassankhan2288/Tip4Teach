@@ -1,9 +1,215 @@
 
-@extends('frontend.teachers.teacher')
+{{-- @extends('frontend.teachers.teacher') --}}
+@extends('frontend.teachers.masterLayout')
 
 @section('content')
-    <!--teacher-dashboard-->
+
+<h3>list of Recieved Tips</h3>
+<section class="table-section">
+  <table>
+    <thead>
+        <tr>
+          <th>Tip ID</th>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Message</th>
+          <th>Payment Status</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td class="tip-id">#141281</td>
+            <td>David</td>
+            <td>Jan 2,2022</td>
+            <td>Thank you</td>
+            <td class="tip-freq"><span class="inprogress"></span><span>Pending</span></td>
+            <td class="tip-his-amount">$783.22</td>
+        </tr>
+        <tr>
+            <td class="tip-id">#141281</td>
+            <td>Kevin Martin</td>
+            <td>Jan 2,2022</td>
+            <td>Thank you</td>
+            <td class="tip-freq"><span class="success"></span><span>Paid</span></td>
+            <td class="tip-his-amount">$783.22</td>
+        </tr>
+        <tr>
+            <td class="tip-id">#141281</td>
+            <td>Anonymous</td>
+            <td>Jan 2,2022</td>
+            <td>-</td>
+            <td class="tip-freq"><span class="processing"></span><span>Processing</span></td>
+            <td class="tip-his-amount">$783.22</td>
+        </tr>
+        <tr>
+            <td class="tip-id">#141281</td>
+            <td>Alesia jake</td>
+            <td>Jan 2,2022</td>
+            <td>-</td>
+            <td class="tip-freq"><span class="success"></span><span>Paid</span></td>
+            <td class="tip-his-amount">$783.22</td>
+        </tr>
+        <tr>
+            <td class="tip-id">#141281</td>
+            <td>Anonymous</td>
+            <td>Jan 2,2022</td>
+            <td>Thank you</td>
+            <td class="tip-freq"><span class="success"></span><span>Paid</span></td>
+            <td class="tip-his-amount">$783.22</td>
+        </tr>
+        <tr>
+            <td class="tip-id">#141281</td>
+            <td>Alesia jake</td>
+            <td>Jan 2,2022</td>
+            <td>-</td>
+            <td class="tip-freq"><span class="inprogress"></span><span>Pending</span></td>
+            <td class="tip-his-amount">$783.22</td>
+        </tr>
+      </tbody>
+  </table>
+</section>
+
+<div class="dash-icon position-absolute d-block d-lg-none">
+    <img src="img/menu (1).svg" class="img-fluid " alt="dash-icon">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {{-- <!--teacher-dashboard-->
     <section class="tch-dash">
+
+        <div class="col-12 col-lg-9">
+            <div class="dashboard teacher-dash">
+                
+                <h3>list of Recieved Tips</h3>
+                <section class="table-section">
+                  <table>
+                    <thead>
+                        <tr>
+                          <th>Tip ID</th>
+                          <th>Name</th>
+                          <th>Date</th>
+                          <th>Message</th>
+                          <th>Payment Status</th>
+                          <th>Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td class="tip-id">#141281</td>
+                            <td>David</td>
+                            <td>Jan 2,2022</td>
+                            <td>Thank you</td>
+                            <td class="tip-freq"><span class="inprogress"></span><span>Pending</span></td>
+                            <td class="tip-his-amount">$783.22</td>
+                        </tr>
+                        <tr>
+                            <td class="tip-id">#141281</td>
+                            <td>Kevin Martin</td>
+                            <td>Jan 2,2022</td>
+                            <td>Thank you</td>
+                            <td class="tip-freq"><span class="success"></span><span>Paid</span></td>
+                            <td class="tip-his-amount">$783.22</td>
+                        </tr>
+                        <tr>
+                            <td class="tip-id">#141281</td>
+                            <td>Anonymous</td>
+                            <td>Jan 2,2022</td>
+                            <td>-</td>
+                            <td class="tip-freq"><span class="processing"></span><span>Processing</span></td>
+                            <td class="tip-his-amount">$783.22</td>
+                        </tr>
+                        <tr>
+                            <td class="tip-id">#141281</td>
+                            <td>Alesia jake</td>
+                            <td>Jan 2,2022</td>
+                            <td>-</td>
+                            <td class="tip-freq"><span class="success"></span><span>Paid</span></td>
+                            <td class="tip-his-amount">$783.22</td>
+                        </tr>
+                        <tr>
+                            <td class="tip-id">#141281</td>
+                            <td>Anonymous</td>
+                            <td>Jan 2,2022</td>
+                            <td>Thank you</td>
+                            <td class="tip-freq"><span class="success"></span><span>Paid</span></td>
+                            <td class="tip-his-amount">$783.22</td>
+                        </tr>
+                        <tr>
+                            <td class="tip-id">#141281</td>
+                            <td>Alesia jake</td>
+                            <td>Jan 2,2022</td>
+                            <td>-</td>
+                            <td class="tip-freq"><span class="inprogress"></span><span>Pending</span></td>
+                            <td class="tip-his-amount">$783.22</td>
+                        </tr>
+                      </tbody>
+                  </table>
+                </section>
+                <div class="dash-icon position-absolute d-block d-lg-none">
+                  <img src="{{asset('frontend/img/menu (1).svg ')}}" class="img-fluid " alt="dash-icon">
+                </div>
+            </div>
+        </div>
         
         <div class="tch-dash-contact-popup" id="tach-contact-popup">
           <div class="container">
@@ -55,5 +261,5 @@
             </div>
         </div>
     </div>
-    </section>
+    </section> --}}
 @endsection
