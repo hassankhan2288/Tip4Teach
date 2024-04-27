@@ -74,6 +74,7 @@ Route::prefix('admin')->group(function () {
 
 });
     // ** Website Routes * /
+    Route::get('/', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
     Route::get('/home', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
     Route::get('/tip_now', [App\Http\Controllers\Frontend\frontendController::class,'tipNow'])->name('website.tip_now');
     Route::get('/tipping', [App\Http\Controllers\Frontend\frontendController::class,'tipping'])->name('website.tipping');
@@ -85,7 +86,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/teacher/login', [App\Http\Controllers\Frontend\frontendController::class,'teacherLogin'])->name('website.teacher.login');
     //** Tipper */
 Route::prefix('tipper')->group(function () {
-    Route::get('/home', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
+    // Route::get('/home', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
     Route::get('/setup/account', [App\Http\Controllers\Frontend\tipperController::class,'tipperAccount'])->name('website.tipper.account');
     Route::post('/setup/account/post/{id}', [App\Http\Controllers\Frontend\tipperController::class,'tipperAccountPost'])->name('website.tipper.account.post');
     Route::get('/signup', [App\Http\Controllers\Frontend\tipperController::class,'tipperSignup'])->name('website.tipper.signup');
@@ -96,7 +97,7 @@ Route::prefix('tipper')->group(function () {
 });
 // ** Teacher */
 Route::prefix('teacher')->group(function () {
-    Route::get('/home', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
+    // Route::get('/home', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
     Route::get('/setup/account', [App\Http\Controllers\Frontend\teacherController::class,'teacherAccount'])->name('website.teacher.account');
     Route::post('/setup/account/{id}', [App\Http\Controllers\Frontend\teacherController::class,'teacherAccountPost'])->name('website.teacher.account.post');
     Route::get('/signup', [App\Http\Controllers\Frontend\teacherController::class,'teacherSignup'])->name('website.teacher.signup');
