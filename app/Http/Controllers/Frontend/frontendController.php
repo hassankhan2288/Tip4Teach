@@ -11,10 +11,15 @@ class frontendController extends Controller
     public function index(){
         return view('frontend.index');
     }
+    public function tipping()
+    {
+        $all_teacher = Teacher::first();
+        return view('frontend.tipping',compact('all_teacher'));
+    }
     public function tipNow()
     {
-        $current_teacher = Teacher::where('teacher_status','1')->get();
-        $farmer_teacher = Teacher::where('teacher_status','0')->get();
+        $current_teacher = Teacher::where('teacher_status','1')->where('status','active')->get();
+        $farmer_teacher = Teacher::where('teacher_status','0')->where('status','active')->get();
         // dd($farmer_teacher);
         return view('frontend.tip',compact('current_teacher','farmer_teacher'));
     }

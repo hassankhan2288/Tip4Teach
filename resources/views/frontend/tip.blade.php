@@ -25,28 +25,46 @@
               @foreach ($farmer_teacher as $teacher)
               <div class="col-4 col-lg-3 mb-3 mb-lg-5 formerTeacher teacher">
                 <div class="text-center">
-                  <img src="{{asset('frontend/img/Ellipse 16.png')}}" alt="teacher">
+                  <img src="{{url('public/images',$teacher->profile_image)}}" alt="teacher">
                   <h5>Ms. {{$teacher->first_name}} {{$teacher->last_name}}<br>Experience {{$teacher->experience}}.</h5>
-                  <a class="dedcription-btn" href="tipping.html">
-                    <span class="name-descripeion">TIP NOW</span>
-                    <div class="btn-icon">
-                      <img src="{{asset('frontend/img/tip-icon.svg')}}" class="img-fluid " alt="">
-                    </div>
-                  </a>
+                  @if (\Auth::guard('tipper')->user())
+                    <a class="dedcription-btn" href="{{ route('website.tipping') }}">
+                        <span class="name-descripeion">TIP NOW</span>
+                        <div class="btn-icon">
+                            <img src="{{ asset('frontend/img/tip-icon.svg') }}" class="img-fluid" alt="">
+                        </div>
+                    </a>
+                  @else
+                      <a class="dedcription-btn" href="{{ route('website.tipper.login') }}">
+                        <span class="name-descripeion">Login to Tip</span>
+                        <div class="btn-icon">
+                          <img src="{{ asset('frontend/img/tip-icon.svg') }}" class="img-fluid" alt="">
+                      </div>
+                      </a>
+                  @endif
               </div>
               </div>
               @endforeach
               @foreach ($current_teacher as $cur_teacher)
               <div class="col-4 col-lg-3 mb-3 mb-lg-5 currentTeacher teacher">
                 <div class="text-center">
-                  <img src="{{asset('frontend/img/Ellipse 17.png')}}" alt="teacher">
+                  <img src="{{url('public/images',$cur_teacher->profile_image)}}" alt="teacher">
                   <h5>Ms. {{$cur_teacher->first_name}} {{$cur_teacher->last_name}}<br>Experience {{$cur_teacher->experience}}.</h5>
-                  <a class="dedcription-btn" href="tipping.html">
-                    <span class="name-descripeion">TIP NOW</span>
-                    <div class="btn-icon">
-                      <img src="{{asset('frontend/img/tip-icon.svg')}}" class="img-fluid " alt="">
-                    </div>
-                  </a>
+                  @if (\Auth::guard('tipper')->user())
+                    <a class="dedcription-btn" href="{{ route('website.tipping') }}">
+                        <span class="name-descripeion">TIP NOW</span>
+                        <div class="btn-icon">
+                            <img src="{{ asset('frontend/img/tip-icon.svg') }}" class="img-fluid" alt="">
+                        </div>
+                    </a>
+                  @else
+                      <a class="dedcription-btn" href="{{ route('website.tipper.login') }}">
+                        <span class="name-descripeion">Login to Tip</span>
+                        <div class="btn-icon">
+                          <img src="{{ asset('frontend/img/tip-icon.svg') }}" class="img-fluid" alt="">
+                      </div>
+                      </a>
+                  @endif
                 </div>
               </div>
               @endforeach
@@ -126,6 +144,8 @@
         </div>
     </section>
    @endsection
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script>
           $(".teacher-btn").click(function(){
           $(this).siblings().removeClass("active");

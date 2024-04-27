@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-12 col-lg-3 mb-3 mb-lg-0">
                     <div class="upload-pic d-flex flex-column justify-content-center align-items-center  text-center">
-                        <img src="{{asset('frontend/img/pro.png')}}" class="img-fluid " alt="profile-pic" id="teacher-picture">
+                        <img src="{{asset('frontend/img/icons8-person-64 2.png')}}" class="img-fluid " alt="profile-pic" id="teacher-picture">
                         <label for="input-file" class="main-btn mt-2">Change Picture</label>
                         <input type="file" name="profile_image" accept="image/jpeg, image/png, image/jpg" id="input-file">
                     </div>

@@ -32,7 +32,7 @@ class teacherController extends Controller
             $request->profile_image->move(public_path('images'), $imageName);
     
             $teacher->update([
-                'profile_image' => 'images/' . $imageName,
+                'profile_image' =>  $imageName,
             ]);
         }
     
@@ -80,23 +80,6 @@ class teacherController extends Controller
         } else {
             return redirect()->route('website.home');
         }
-    }
-    public function teacherLogin(){
-        return view('frontend.teacher-signin');
-    }
-    public function teacherLoginPost(Request $request){
-
-        // dd($request->all());
-        $this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required|min:6'
-        ]);
-
-        if (auth::guard('teacher')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-
-            return redirect()->intended('/dashboard');
-        }
-        return back()->withInput($request->only('email', 'remember'));
     }
     public function teacherLogout(Request $request)
     {
