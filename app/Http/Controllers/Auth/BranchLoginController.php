@@ -30,7 +30,7 @@ class BranchLoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::TIPPER;
+    protected $redirectTo = RouteServiceProvider::Branch;
 
     /**
      * Create a new controller instance.
@@ -40,7 +40,7 @@ class BranchLoginController extends Controller
     public function __construct()
     {
 
-        $this->middleware('guest:tipper')->except('logout');
+        $this->middleware('guest:branch')->except('logout');
     }
 
 

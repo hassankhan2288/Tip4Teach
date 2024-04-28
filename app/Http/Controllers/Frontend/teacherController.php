@@ -10,6 +10,13 @@ use Auth;
 
 class teacherController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:teacher');
+
+    }
+
     public function teacherAccount(Request $request)
     {
         $authUser = Auth::guard('teacher')->user();
@@ -52,35 +59,7 @@ class teacherController extends Controller
     
         return redirect()->route('teacher.dashboard')->with('success', 'Profile updated successfully');        
     }
-    public function teacherSignup(){
-        return view('teachers.partials.teacher-signup');
-    }
-    public function teacherSignupPost(Request $request){
-        // dd($request->all());
-        $this->validate($request, [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:6'
-        ]);
     
-        $isEmailExists = Teacher::where('email', $request->email)->exists();
-        if ($isEmailExists) {
-            return redirect()->back()->with('error', 'The email is already registered');
-        } 
-        $teacher = new Teacher;
-        $teacher->first_name = $request->first_name;
-        $teacher->last_name = $request->last_name;
-        $teacher->email = $request->email;
-        $teacher->password = Hash::make($request->password);
-        // dd($teacher);
-        $teacher->save();
-        if (auth()->guard('teacher')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->route('website.teacher.account');
-        } else {
-            return redirect()->route('website.home');
-        }
-    }
     public function teacherLogout(Request $request)
     {
         Auth::logout();
@@ -89,6 +68,6 @@ class teacherController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->route('website.home');
+        return redirect()->route('website.teacher.login');
     }
 }

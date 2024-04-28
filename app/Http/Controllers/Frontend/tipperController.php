@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Hash;
 use Auth;
 class tipperController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:tipper');
+
+    }
+
     public function tipperAccount(Request $request)
     {
         $authUser = Auth::guard('tipper')->user();
