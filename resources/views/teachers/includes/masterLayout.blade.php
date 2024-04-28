@@ -10,12 +10,12 @@
         <div class="container-fluid">
             <div class="row">
     
-                @include('frontend.teachers.sidebar')
+                @include('teachers.includes.sidebar')
     
                 <div class="col-12 col-lg-9">
                     <div class="dashboard teacher-dash">
                        
-                        @include('frontend.teachers.header')
+                        {{-- @include('teachers.includes.header') --}}
     
                         @yield('content')
 
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     <div class="sidebar-close-icon position-absolute close-dash" id="tech-popup-btn">
-                        <img src="img/close.svg" class="img-fluid" alt="sidebar-close-icon">
+                        <img src="{{asset('frontend/img/close.svg')}}" class="img-fluid" alt="sidebar-close-icon">
                     </div>
                 </form>
             </div>

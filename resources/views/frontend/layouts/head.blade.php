@@ -23,4 +23,4 @@
 <!-- Custom CSS -->
 {{-- <link rel="stylesheet" href="css/style.css"> --}}
 <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
-<link rel="stylesheet" href="{{asset('frontend/js/script.js')}}">
+<script href="{{asset('frontend/js/script.js')}}"></script>

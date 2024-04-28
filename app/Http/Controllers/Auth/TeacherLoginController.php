@@ -45,7 +45,7 @@ class TeacherLoginController extends Controller
 
     public function teacherLogin()
     {
-        return view('frontend.teacher-signin');
+        return view('teachers.partials.teacher-signin');
     }
 
 

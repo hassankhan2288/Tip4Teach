@@ -1,6 +1,6 @@
 
 {{-- @extends('frontend.teachers.teacher') --}}
-@extends('frontend.teachers.masterLayout')
+@extends('teachers.includes.masterLayout')
 
 @section('content')
 

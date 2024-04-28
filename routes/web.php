@@ -77,7 +77,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
     Route::get('/home', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
     Route::get('/tip_now', [App\Http\Controllers\Frontend\frontendController::class,'tipNow'])->name('website.tip_now');
-    Route::get('/tipping', [App\Http\Controllers\Frontend\frontendController::class,'tipping'])->name('website.tipping');
+    Route::get('/tipping/{id}', [App\Http\Controllers\Frontend\frontendController::class,'tipping'])->name('website.tipping');
     Route::get('/about', [App\Http\Controllers\Frontend\frontendController::class,'about'])->name('website.about');
     Route::get('/contact', [App\Http\Controllers\Frontend\frontendController::class,'contact'])->name('website.contact');
     Route::get('/role', [App\Http\Controllers\Frontend\frontendController::class,'role'])->name('website.role');
@@ -97,7 +97,7 @@ Route::prefix('tipper')->group(function () {
 });
 // ** Teacher */
 Route::prefix('teacher')->group(function () {
-    // Route::get('/home', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
+    Route::get('/home', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
     Route::get('/setup/account', [App\Http\Controllers\Frontend\teacherController::class,'teacherAccount'])->name('website.teacher.account');
     Route::post('/setup/account/{id}', [App\Http\Controllers\Frontend\teacherController::class,'teacherAccountPost'])->name('website.teacher.account.post');
     Route::get('/signup', [App\Http\Controllers\Frontend\teacherController::class,'teacherSignup'])->name('website.teacher.signup');
@@ -107,5 +107,7 @@ Route::prefix('teacher')->group(function () {
     Route::get('/logout', [App\Http\Controllers\Frontend\teacherController::class,'teacherLogout'])->name('website.teacher.logout');
 });
     Route::get('/dashboard', [App\Http\Controllers\Frontend\frontendController::class,'teacher_dashboard'])->name('teacher.dashboard');
+    Route::get('/tip-received-list', [App\Http\Controllers\Frontend\frontendController::class,'tipReceivedList'])->name('teacher.tip.received');
+    Route::get('/view-profile', [App\Http\Controllers\Frontend\frontendController::class,'viewProfile'])->name('teacher.view.profile');
 
 

@@ -25,7 +25,7 @@ class RouteServiceProvider extends ServiceProvider
 
     
     public const ADMIN = '/admin/dashboard';
-    public const TIPPER = '/tipper/home';
+    public const TIPPER = '/';
     public const TEACHER = '/teacher/home';
 
     // public const BRANCH = '/branch/dashboard';

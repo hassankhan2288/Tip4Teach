@@ -11,10 +11,11 @@ class frontendController extends Controller
     public function index(){
         return view('frontend.index');
     }
-    public function tipping()
+    public function tipping($id)
     {
-        $all_teacher = Teacher::first();
-        return view('frontend.tipping',compact('all_teacher'));
+        $teacher = Teacher::find($id);
+        // dd($teacher);
+        return view('frontend.tipping',compact('teacher'));
     }
     public function tipNow()
     {
@@ -33,17 +34,23 @@ class frontendController extends Controller
         return view('frontend.role');
     }
     public function teacherSignup(){
-        return view('frontend.teacher-signup');
+        return view('teachers.partials.teacher-signup');
     }
     
         public function teacherAccount(){
-        return view('frontend.setup-account02');
+        return view('teachers.partials.setup-account02');
     }
     public function teacherLogin(){
-        return view('frontend.teacher-signin');
+        return view('teachers.partials.teacher-signin');
     }
    
     public function teacher_dashboard(){
-        return view('frontend.list-received-tips');
+        return view('teachers.partials.teacher-dashboard');
+    }
+    public function tipReceivedList(){
+        return view('teachers.partials.list-received-tips');
+    }
+    public function viewProfile(){
+        return view('teachers.partials.view-profile02');
     }
 }

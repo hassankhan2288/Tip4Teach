@@ -28,7 +28,7 @@
                   <img src="{{url('public/images',$teacher->profile_image)}}" alt="teacher">
                   <h5>Ms. {{$teacher->first_name}} {{$teacher->last_name}}<br>Experience {{$teacher->experience}}.</h5>
                   @if (\Auth::guard('tipper')->user())
-                    <a class="dedcription-btn" href="{{ route('website.tipping') }}">
+                  <a class="dedcription-btn" href="{{ route('website.tipping', ['id' => $teacher->id]) }}">
                         <span class="name-descripeion">TIP NOW</span>
                         <div class="btn-icon">
                             <img src="{{ asset('frontend/img/tip-icon.svg') }}" class="img-fluid" alt="">
@@ -36,7 +36,7 @@
                     </a>
                   @else
                       <a class="dedcription-btn" href="{{ route('website.tipper.login') }}">
-                        <span class="name-descripeion">Login to Tip</span>
+                        <span class="name-descripeion">TIP NOW</span>
                         <div class="btn-icon">
                           <img src="{{ asset('frontend/img/tip-icon.svg') }}" class="img-fluid" alt="">
                       </div>
@@ -51,7 +51,7 @@
                   <img src="{{url('public/images',$cur_teacher->profile_image)}}" alt="teacher">
                   <h5>Ms. {{$cur_teacher->first_name}} {{$cur_teacher->last_name}}<br>Experience {{$cur_teacher->experience}}.</h5>
                   @if (\Auth::guard('tipper')->user())
-                    <a class="dedcription-btn" href="{{ route('website.tipping') }}">
+                    <a class="dedcription-btn" href="{{ route('website.tipping', ['id' => $teacher->id]) }}">
                         <span class="name-descripeion">TIP NOW</span>
                         <div class="btn-icon">
                             <img src="{{ asset('frontend/img/tip-icon.svg') }}" class="img-fluid" alt="">
@@ -59,7 +59,7 @@
                     </a>
                   @else
                       <a class="dedcription-btn" href="{{ route('website.tipper.login') }}">
-                        <span class="name-descripeion">Login to Tip</span>
+                        <span class="name-descripeion">TIP NOW</span>
                         <div class="btn-icon">
                           <img src="{{ asset('frontend/img/tip-icon.svg') }}" class="img-fluid" alt="">
                       </div>

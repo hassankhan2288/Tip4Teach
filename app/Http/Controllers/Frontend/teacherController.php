@@ -16,7 +16,7 @@ class teacherController extends Controller
         // dd($authUser);
         $teacher = Teacher::where('id',$authUser->id)->first();
         // dd($teacher);
-        return view('frontend.setup-account02',compact('teacher'));
+        return view('teachers.partials.setup-account02',compact('teacher'));
     }
 
     public function teacherAccountPost(Request $request)
@@ -53,7 +53,7 @@ class teacherController extends Controller
         return redirect()->route('teacher.dashboard')->with('success', 'Profile updated successfully');        
     }
     public function teacherSignup(){
-        return view('frontend.teacher-signup');
+        return view('teachers.partials.teacher-signup');
     }
     public function teacherSignupPost(Request $request){
         // dd($request->all());
