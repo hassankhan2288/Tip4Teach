@@ -1,5 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Frontend\tipperController;
+use App\Http\Controllers\Auth\TipperLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,27 +77,27 @@ Route::prefix('admin')->group(function () {
 
 });
     // ** Website Routes * /
-    Route::get('/', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
-    Route::get('/home', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
-    Route::get('/tip_now', [App\Http\Controllers\Frontend\frontendController::class,'tipNow'])->name('website.tip_now');
-    Route::get('/tipping/{id}', [App\Http\Controllers\Frontend\frontendController::class,'tipping'])->name('website.tipping');
-    Route::get('/about', [App\Http\Controllers\Frontend\frontendController::class,'about'])->name('website.about');
-    Route::get('/contact', [App\Http\Controllers\Frontend\frontendController::class,'contact'])->name('website.contact');
-    Route::get('/role', [App\Http\Controllers\Frontend\frontendController::class,'role'])->name('website.role');
-    Route::get('/teacher/signup', [App\Http\Controllers\Frontend\frontendController::class,'teacherSignup'])->name('website.teacher.signup');
-    Route::get('/setup/teacher/account', [App\Http\Controllers\Frontend\frontendController::class,'teacherAccount'])->name('website.teacher.account');
+    Route::get('/', [frontendController::class, 'index'])->name('website.home');
+    Route::get('/home', [frontendController::class, 'index'])->name('website.home');
+    Route::get('/tip_now', [frontendController::class,'tipNow'])->name('website.tip_now');
+    Route::get('/tipping/{id}', [frontendController::class,'tipping'])->name('website.tipping');
+    Route::get('/about', [frontendController::class,'about'])->name('website.about');
+    Route::get('/contact', [frontendController::class,'contact'])->name('website.contact');
+    Route::get('/role', [frontendController::class,'role'])->name('website.role');
+    Route::get('/teacher/signup', [frontendController::class,'teacherSignup'])->name('website.teacher.signup');
+    Route::get('/setup/teacher/account', [frontendController::class,'teacherAccount'])->name('website.teacher.account');
     // Route::get('/teacher/login', [App\Http\Controllers\Frontend\frontendController::class,'teacherLogin'])->name('website.teacher.login');
     //** Tipper */
 Route::prefix('tipper')->middleware('auth:tipper')->group(function () {
     // Route::get('/home', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
-    Route::get('/setup/account', [App\Http\Controllers\Frontend\tipperController::class,'tipperAccount'])->name('website.tipper.account');
-    Route::post('/setup/account/post/{id}', [App\Http\Controllers\Frontend\tipperController::class,'tipperAccountPost'])->name('website.tipper.account.post');
-    Route::get('/logout', [App\Http\Controllers\Frontend\tipperController::class,'tipperLogout'])->name('website.tipper.logout');
+    Route::get('/setup/account', [tipperController::class,'tipperAccount'])->name('website.tipper.account');
+    Route::post('/setup/account/post/{id}', [tipperController::class,'tipperAccountPost'])->name('website.tipper.account.post');
+    Route::get('/logout', [tipperController::class,'tipperLogout'])->name('website.tipper.logout');
 });
-    Route::get('/signup', [App\Http\Controllers\Frontend\tipperController::class,'tipperSignup'])->name('website.tipper.signup');
-    Route::post('/siginup/post',[App\Http\Controllers\Frontend\tipperController::class,'tipperSignupPost'])->name('website.tipper.signup.post');
-    Route::get('/login', [App\Http\Controllers\Auth\TipperLoginController::class,'tipperLogin'])->name('website.tipper.login');
-    Route::post('/login/post', [App\Http\Controllers\Auth\TipperLoginController::class,'tipperLoginPost'])->name('website.tipper.login.post');
+    Route::get('/user-signup', [TipperLoginController::class,'tipperSignup'])->name('website.tipper.signup');
+    Route::post('/user/siginup/post',[TipperLoginController::class,'tipperSignupPost'])->name('website.tipper.signup.post');
+    Route::get('/user-login', [TipperLoginController::class,'tipperLogin'])->name('website.tipper.login');
+    Route::post('/user/login/post', [TipperLoginController::class,'tipperLoginPost'])->name('website.tipper.login.post');
 
 
 // ** Teacher */
