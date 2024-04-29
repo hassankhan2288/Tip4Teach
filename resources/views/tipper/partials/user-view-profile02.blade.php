@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','Tip4Teach || Home')
+@section('title','Tip4Teach || View profile')
 @section('main-content')
     <!--user-view-account Section-->
     <div class="form-page container">
@@ -10,45 +10,45 @@
             <div class="row">
                 <div class="col-12 col-lg-3 mb-5 mb-lg-0">
                     <div class="upload-pic text-center">
-                        <img src="img/pro.png" class="img-fluid " alt="profile-pic" id="teacher-picture">
+                        <img src="{{url('public/images',$tippers->profile_image)}}" class="img-fluid " alt="profile-pic" id="teacher-picture">
                     </div>
                 </div>
                 <div class="col-12 col-lg-9">
                     <div class="row">
                         <div class="col-12 col-lg-6 mb-3 form-label ">
                             <span>First name</span>
-                            <input disabled class="form-control" type="text" value="Jonhathon" name="your-name">
+                            <input disabled class="form-control" type="text" value="{{ $tippers->first_name }}" name="first_name">
                         </div>
                         <div class="col-12 col-lg-6 mb-3 form-label ">
                             <span>Last name</span>
-                            <input disabled class="form-control" type="text" value="Steve" name="your-name">
+                            <input disabled class="form-control" type="text" value="{{ $tippers->last_name }}" name="last_name">
                         </div>
                         <div class="col-12 mb-3 form-label ">
                             <span>Phone Number</span>
-                            <input disabled class="form-control"  type="text" value="+1.123.241.4444" name="phone">
+                            <input disabled class="form-control"  type="text" value="{{ $tippers->phone }}" name="phone">
                         </div>
                         <div class="col-12 mb-3 form-label ">
                             <span>Occupation</span>
-                            <input disabled class="form-control"  type="text" value="Developer" name="occupation">
+                            <input disabled class="form-control"  type="text" value="{{ $tippers->occupation }}" name="occupation">
                         </div>
                         <div class="col-12 col-lg-6 mb-3 form-label ">
                             <span>City</span>
-                            <input disabled class="form-control" type="text" value="San Francisco" name="city">
+                            <input disabled class="form-control" type="text" value="{{ $tippers->city }}" name="city">
                         </div>
                         <div class="col-12 col-lg-6 mb-3 form-label ">
                             <span>State/County</span>
-                            <input disabled class="form-control" type="text" value="California" name="country">
+                            <input disabled class="form-control" type="text" value="{{ $tippers->state }}" name="state">
                         </div>
                         <div class="col-12 col-lg-6 mb-3 form-label ">
                             <span>Country</span>
-                            <input disabled class="form-control" type="text" value="United States" name="country">
+                            <input disabled class="form-control" type="text" value="{{ $tippers->country }}" name="country">
                         </div>
                         <div class="col-12 col-lg-6 mb-3 form-label ">
                             <span>Postal Code</span>
-                            <input disabled class="form-control" type="text" value="94016" name="postal-code">
+                            <input disabled class="form-control" type="text" value="{{ $tippers->postal_code }}" name="postal_code">
                         </div>
                         <div class="col-12 mt-3">
-                            <a href="user-dashboard.html" class="submit main-btn back-btn ">Back</a>
+                            <a href="{{route('tipper.dashboard')}}" class="submit main-btn back-btn ">Back</a>
                         </div>
                     </div>
                 </div>

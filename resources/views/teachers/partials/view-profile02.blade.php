@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-12 col-lg-3 mb-5 mb-lg-0">
                     <div class="upload-pic text-center">
-                        <img src="img/pro.png" class="img-fluid " alt="profile-pic" id="teacher-picture">
+                        <img src="{{url('public/images',$teachers->profile_image)}}" class="img-fluid " alt="profile-pic" id="teacher-picture">
                     </div>
                 </div>
                 <div class="col-12 col-lg-9">
@@ -64,7 +64,7 @@
                             <input disabled class="form-control" value="{{ $teachers->postal_code }}" type="text" name="postal_code">
                         </div>
                         <div class="col-12 mt-3">
-                            <a href="teacher-dashboard.html" class="submit main-btn back-btn">Back</a>
+                            <a href="{{route('teacher.dashboard')}}" class="submit main-btn back-btn">Back</a>
                         </div>
                     </div>
                 </div>

@@ -7,13 +7,13 @@
             <div class="row">
                 <div class="col-12 col-lg-6 mb-3 mb-lg-0">
                     <div class="teacher-img">
-                        <img src="{{asset('frontend/img/tipping.png')}}" class="img-fluid " alt="tipping-teacher">
+                        <img src="{{url('public/images',$teachers->profile_image)}}" class="img-fluid " alt="tipping-teacher">
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="tipping-info">
                         <div class="section-title mb-4">
-                          <h2>Miss Elizebeth</h2>
+                          <h2>{{$teachers->first_name}} {{$teachers->last_name}}</h2>
                           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
                         </div>
                         <div class="tipping-details row profile-form shadow-none px-0">
@@ -45,7 +45,7 @@
                             </div>
                             <div class="col-6 mb-3">
                               <div class="banner">
-                                <a href="checkout.html" class="log-btn butn butn__new"><span>TIP NOW</span></a>
+                                <a href="{{route('website.checkout')}}" class="log-btn butn butn__new"><span>TIP NOW</span></a>
                               </div>
                             </div>
                             <h3 class="mb-2">Payment Method</h3>

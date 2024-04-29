@@ -9,7 +9,6 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Auth;
-use App\User;
 
 class TipperLoginController extends Controller
 {
@@ -45,7 +44,7 @@ class TipperLoginController extends Controller
     }
 
     public function tipperSignup(){
-        return view('frontend.tipper-signup');
+        return view('auth.tipper-signup');
     }
     public function tipperSignupPost(Request $request)
     {
@@ -95,34 +94,4 @@ class TipperLoginController extends Controller
         return back()->withInput($request->only('email', 'remember'));
     }
 
-    public function tipperSignup(){
-        return view('frontend.tipper-signup');
-    }
-    public function tipperSignupPost(Request $request)
-    {
-        
-        $this->validate($request, [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:6'
-        ]);
-    
-        $isEmailExists = User::where('email', $request->email)->exists();
-        if ($isEmailExists) {
-            return redirect()->back()->with('error', 'The email is already registered');
-        } 
-    
-        $tipper = new User();
-        $tipper->first_name = $request->first_name;
-        $tipper->last_name = $request->last_name;
-        $tipper->email = $request->email;
-        $tipper->password = Hash::make($request->password);
-        $tipper->save();
-        if (auth()->guard('tipper')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->route('website.tipper.account');
-        } else {
-            return redirect()->route('website.home');
-        }
-    }
 }

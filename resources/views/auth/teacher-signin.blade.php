@@ -40,7 +40,7 @@
                           </div>
                         </div>
                         <div class="col-12 text-center ">
-                          <p class="form-text "> Don't have a Teacher account?  <a href="teacher-signup.html">Sign Up</a></p>
+                          <p class="form-text "> Don't have a Teacher account?  <a href="{{route('website.teacher.signup')}}">Sign Up</a></p>
                         </div>
                     </form>
                 </div>

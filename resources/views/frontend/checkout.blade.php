@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','Tip4Teach || Home')
+@section('title','Tip4Teach || Checkout')
 @section('main-content')
     <!--checkout-section-->
     <section class="check-out">
@@ -22,11 +22,11 @@
                         </div>
                         <div class="col-12 mb-3 payments mt-5">
                             <h3>Payment Method</h3>
-                            <button class="active"><img src="img/icons8-mastercard-48 3.svg" alt="mastercard"></button>
-                            <button ><img src="img/icons8-visa-48 3.svg" alt="visa"></button>
-                            <button ><img src="img/icons8-paypal-48 4.svg" alt="paypal"></button>
-                            <button ><img src="img/icons8-stripe-48 3.svg" alt="stripe"></button>
-                            <button ><img src="img/icons8-apple-pay-64 4.svg" alt="apple-pay"></button>
+                            <button class="active"><img src="{{asset('frontend/img/icons8-mastercard-48 3.svg')}}" alt="mastercard"></button>
+                            <button ><img src="{{asset('frontend/img/icons8-visa-48 3.svg')}}" alt="visa"></button>
+                            <button ><img src="{{asset('frontend/img/icons8-paypal-48 4.svg')}}" alt="paypal"></button>
+                            <button ><img src="{{asset('frontend/img/icons8-stripe-48 3.svg')}}" alt="stripe"></button>
+                            <button ><img src="{{asset('frontend/img/icons8-apple-pay-64 4.svg')}}" alt="apple-pay"></button>
                         </div>
                         <div class="col-12 mb-3 card-name">
                           <h3>Cardholder Name</h3>
@@ -41,11 +41,11 @@
                           <input type="date" class="date-input form-control">
                         </div>
                         <div class="col-12 col-md-3 mb-3">
-                          <h3>CVC <span><img src="img/icons8-information-50 1.svg" class="img-fluid cvc-img" alt="icons8"></span></h3>
+                          <h3>CVC <span><img src="{{asset('frontend/img/icons8-information-50 1.svg')}}" class="img-fluid cvc-img" alt="icons8"></span></h3>
                           <input type="text" class="form-control">
                         </div>
                         <div class="col-12 mb-3">
-                            <span><img src="img/icons8-information-50 1.svg" class="me-1" alt="icons8"></span>
+                            <span><img src="{{asset('frontend/img/icons8-information-50 1.svg')}}" class="me-1" alt="icons8"></span>
                             <span class="inform">Credit Card payments may take up to 24h to be processed</span>
                         </div>
                         <div class="col-12 mb-3 d-flex align-items-center gap-2 ">
@@ -55,7 +55,7 @@
                           </label>
                         </div>
                         <a href="tipping.html">
-                            <span><img src="img/icons8-back-48 1.svg" class="me-1" alt="icons8"></span>
+                            <span><img src="{{asset('frontend/img/icons8-back-48 1.svg')}}" class="me-1" alt="icons8"></span>
                             <span class="return">Return to add funds</span>
                         </a>
                       </form>
@@ -97,7 +97,7 @@
           <div class="container">
               <div class="tch-contact-popup text-center">
                 <div class="img-container mb-3">
-                  <img src="img/image 19.png" class="img-fluid " alt="">
+                  <img src="{{asset('frontend/img/image 19.png')}}" class="img-fluid " alt="">
                 </div>
                   <h3 class="mb-4">Thankyou !!</h3>
                   <p class="mb-4">Your Tip will be transferred to Teacher ASAP</p>

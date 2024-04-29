@@ -40,7 +40,7 @@
                           </div>
                         </div>
                         <div class="col-12 text-center ">
-                          <p class="form-text "> Don't have a Tipper account?  <a href="tipper-signup.html">Sign Up</a></p>
+                          <p class="form-text "> Don't have a Tipper account?  <a href="{{route('website.tipper.signup')}}">Sign Up</a></p>
                         </div>
                     </form>
                 </div>

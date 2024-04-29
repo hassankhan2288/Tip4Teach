@@ -13,9 +13,9 @@ class frontendController extends Controller
     }
     public function tipping($id)
     {
-        $teacher = Teacher::find($id);
-        // dd($teacher);
-        return view('frontend.tipping',compact('teacher'));
+        $teachers = Teacher::find($id);
+        // dd($teachers);
+        return view('frontend.tipping',compact('teachers'));
     }
     public function tipNow()
     {
@@ -49,5 +49,8 @@ class frontendController extends Controller
     }
     public function tipReceivedList(){
         return view('teachers.partials.list-received-tips');
+    }
+    public function checkout(){
+        return view('frontend.checkout');
     }
 }
