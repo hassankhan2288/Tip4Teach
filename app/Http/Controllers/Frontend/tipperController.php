@@ -56,7 +56,7 @@ class tipperController extends Controller
     
         return redirect()->route('website.home')->with('success', 'Profile updated successfully');
     }
-
+    
     
     public function tipperLogout(Request $request)
     {
