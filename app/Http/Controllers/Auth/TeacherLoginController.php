@@ -45,7 +45,7 @@ class TeacherLoginController extends Controller
     }
 
     public function teacherSignup(){
-        return view('teachers.partials.teacher-signup');
+        return view('auth.teacher-signup');
     }
     public function teacherSignupPost(Request $request){
         $this->validate($request, [
@@ -75,7 +75,7 @@ class TeacherLoginController extends Controller
 
     public function teacherLogin()
     {
-        return view('teachers.partials.teacher-signin');
+        return view('auth.teacher-signin');
     }
 
 

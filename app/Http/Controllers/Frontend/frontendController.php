@@ -50,7 +50,4 @@ class frontendController extends Controller
     public function tipReceivedList(){
         return view('teachers.partials.list-received-tips');
     }
-    public function viewProfile(){
-        return view('teachers.partials.view-profile02');
-    }
 }

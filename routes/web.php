@@ -81,9 +81,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/about', [App\Http\Controllers\Frontend\frontendController::class,'about'])->name('website.about');
     Route::get('/contact', [App\Http\Controllers\Frontend\frontendController::class,'contact'])->name('website.contact');
     Route::get('/role', [App\Http\Controllers\Frontend\frontendController::class,'role'])->name('website.role');
-    Route::get('/teacher/signup', [App\Http\Controllers\Frontend\frontendController::class,'teacherSignup'])->name('website.teacher.signup');
-    Route::get('/setup/teacher/account', [App\Http\Controllers\Frontend\frontendController::class,'teacherAccount'])->name('website.teacher.account');
-    // Route::get('/teacher/login', [App\Http\Controllers\Frontend\frontendController::class,'teacherLogin'])->name('website.teacher.login');
     //** Tipper */
 Route::prefix('tipper')->middleware('auth:tipper')->group(function () {
     // Route::get('/home', [App\Http\Controllers\Frontend\frontendController::class,'index'])->name('website.home');
@@ -91,8 +88,8 @@ Route::prefix('tipper')->middleware('auth:tipper')->group(function () {
     Route::post('/setup/account/post/{id}', [App\Http\Controllers\Frontend\tipperController::class,'tipperAccountPost'])->name('website.tipper.account.post');
     Route::get('/logout', [App\Http\Controllers\Frontend\tipperController::class,'tipperLogout'])->name('website.tipper.logout');
 });
-    Route::get('/signup', [App\Http\Controllers\Frontend\tipperController::class,'tipperSignup'])->name('website.tipper.signup');
-    Route::post('/siginup/post',[App\Http\Controllers\Frontend\tipperController::class,'tipperSignupPost'])->name('website.tipper.signup.post');
+    Route::get('/signup', [App\Http\Controllers\Auth\TipperLoginController::class,'tipperSignup'])->name('website.tipper.signup');
+    Route::post('/siginup/post',[App\Http\Controllers\Auth\TipperLoginController::class,'tipperSignupPost'])->name('website.tipper.signup.post');
     Route::get('/login', [App\Http\Controllers\Auth\TipperLoginController::class,'tipperLogin'])->name('website.tipper.login');
     Route::post('/login/post', [App\Http\Controllers\Auth\TipperLoginController::class,'tipperLoginPost'])->name('website.tipper.login.post');
 
@@ -105,7 +102,7 @@ Route::prefix('teacher')->middleware('auth:teacher')->group(function () {
     Route::get('/logout', [App\Http\Controllers\Frontend\teacherController::class,'teacherLogout'])->name('website.teacher.logout');
     Route::get('/dashboard', [App\Http\Controllers\Frontend\frontendController::class,'teacher_dashboard'])->name('teacher.dashboard');
     Route::get('/tip-received-list', [App\Http\Controllers\Frontend\frontendController::class,'tipReceivedList'])->name('teacher.tip.received');
-    Route::get('/view-profile', [App\Http\Controllers\Frontend\frontendController::class,'viewProfile'])->name('teacher.view.profile');
+    Route::get('/view-profile/{id}', [App\Http\Controllers\Teacher\profileController::class,'viewProfile'])->name('teacher.view.profile');
 });
 
     Route::get('/signup', [App\Http\Controllers\Auth\TeacherLoginController::class,'teacherSignup'])->name('website.teacher.signup');
