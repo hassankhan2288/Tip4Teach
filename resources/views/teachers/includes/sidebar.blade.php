@@ -22,3 +22,52 @@
         </div>
     </div>
 </div>
+<div class="tch-dash-contact-popup" id="tach-contact-popup">
+    <div class="container">
+        <form class="tch-contact-popup profile-form">
+            <div class="popup-title">
+                <h2>Teacher Contact Form</h2>
+                <p class="mb-3">Thank you for reaching out! Please fill out the form below, and we'll get back to you as soon as possible.</p>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-6 mb-3 form-label ">
+                    <span>First name</span>
+                    <input disabled class="form-control" value="{{ Auth::guard('teacher')->user()->first_name }}" type="text" name="your-name">
+                </div>
+                <div class="col-12 col-lg-6 mb-3 form-label">
+                    <span>Email</span>
+                    <input disabled class="form-control" value="{{ Auth::guard('teacher')->user()->email }}" type="email" name="mail">
+                </div>
+                <div class="col-12 mb-3 form-label">
+                    <span>Role</span>
+                    <input disabled class="form-control" value="teacher" type="text" name="role">
+                </div>
+                <div class="col-12 mb-3 form-label">
+                    <span>Message</span>
+                    <textarea class="form-control popup-textarea" row="4"></textarea>
+                </div>
+                <div class="col-12 mt-3">
+                    <div class="banner" id="popup-thank-tech-btn">
+                      <a href="#" class="log-btn butn butn__new"><span>Send Message</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-close-icon position-absolute close-dash" id="tech-popup-btn">
+                <img src="{{asset('frontend/img/close.svg')}}" class="img-fluid" alt="sidebar-close-icon">
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#contact-tech-popup-btn").click(function(e) {
+            e.preventDefault();
+            $("#tach-contact-popup").css("display", "block");
+        });
+    });
+
+    $("#tech-popup-btn").click(function(){
+        $("#tach-contact-popup").css("display", "none");
+    })
+</script>

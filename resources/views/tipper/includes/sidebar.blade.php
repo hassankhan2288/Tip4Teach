@@ -22,3 +22,9 @@
         </div>
     </div>
 </div>
+<script>
+     $("#contact-user-popup-btn").click(function(e){
+        e.preventDefault();
+        $("#user-contact-popup").css("display", "block");
+    })
+</script>
