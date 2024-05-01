@@ -11,12 +11,13 @@
             <div class="owner-pic"><img src="{{ asset('frontend/img/dash.svg') }}" alt="dashboard-pic">
             </div>
             <div class="owner-info">
-                <h5>Esthera Jackson</h5>
-                <p>esthera@simmmple.com</p>
+                {{-- <h5>Esthera Jackson</h5> --}}
+                <h5>{{$user->first_name}} {{$user->last_name}}</h5>
+                <p>{{$user->email}}</p>
             </div>
         </div>
     </div>
-    <h5 class="sayhi"><img src="{{ asset('frontend/img/waving-hand-sign_1f44b 1.png') }}" alt="waving-hand-sign">Hey User!
+    <h5 class="sayhi"><img src="{{ asset('frontend/img/waving-hand-sign_1f44b 1.png') }}" alt="waving-hand-sign">Hey {{$user->first_name}} {{$user->last_name}}!
     </h5>
     <div class="earnings">
         <h3>You’ve sent $3 ,000 Tips this month</h3>

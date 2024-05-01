@@ -3,13 +3,16 @@
 namespace App\Http\Controllers\Tipper;
 
 use App\Http\Controllers\Controller;
+use Auth;
 use Illuminate\Http\Request;
 
 class dashboardController extends Controller
 {
     public function tipperDashboard()
     {
-        return view('tipper.partials.user-dashboard');
+        $user = Auth::user();
+        // dd($user);
+        return view('tipper.partials.user-dashboard',compact('user'));
     }
     public function tipHistory()
     {

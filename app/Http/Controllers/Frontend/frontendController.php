@@ -44,12 +44,6 @@ class frontendController extends Controller
         return view('teachers.partials.teacher-signin');
     }
    
-    public function teacher_dashboard(){
-        return view('teachers.partials.teacher-dashboard');
-    }
-    public function tipReceivedList(){
-        return view('teachers.partials.list-received-tips');
-    }
     public function checkout(){
         return view('frontend.checkout');
     }

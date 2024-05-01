@@ -24,15 +24,6 @@ use App\Http\Controllers\Auth\TeacherLoginController;
 |
 */
 
-
-Route::get('/pos-reset-password', 'Pos\ResetController@posresetForm')->name('pos.reset.branch.password');
-Route::post('/pos-reset-password-link', 'Pos\ResetController@posresetLink')->name('pos.reset.link');
-Route::get('/pos-reset-password/{token}', function (string $token) {
-    return view('auth.passwords.reset', ['token' => $token]);
-})->name('forgot-password-link');
-Route::post('pos-reset-password-save', 'Pos\ResetController@posResetPassUser')->name('pos.reset.password');
-
-
 /***************** Admin *******************/
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class,'index'])->name('admin.dashboard');
@@ -85,6 +76,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/logout', 'Admin\AccountController@logoutAdmin')->name('admin.logout');
 
 });
+        // * Admin Routes End *//
+
     // ** Website Routes * /
     Route::get('/', [frontendController::class,'index'])->name('website.home');
     Route::get('/home', [frontendController::class,'index'])->name('website.home');
@@ -124,8 +117,10 @@ Route::prefix('teacher')->middleware('auth:teacher')->group(function () {
     Route::get('/setup/account', [App\Http\Controllers\Frontend\teacherController::class,'teacherAccount'])->name('website.teacher.account');
     Route::post('/setup/account/{id}', [App\Http\Controllers\Frontend\teacherController::class,'teacherAccountPost'])->name('website.teacher.account.post');
     Route::get('/logout', [App\Http\Controllers\Frontend\teacherController::class,'teacherLogout'])->name('website.teacher.logout');
-    Route::get('/dashboard', [frontendController::class,'teacher_dashboard'])->name('teacher.dashboard');
-    Route::get('/tip-received-list', [frontendController::class,'tipReceivedList'])->name('teacher.tip.received');
+
+    // Dashboard
+    Route::get('/dashboard', [App\Http\Controllers\Teacher\dashboardController::class,'teacher_dashboard'])->name('teacher.dashboard');
+    Route::get('/tip-received-list', [App\Http\Controllers\Teacher\dashboardController::class,'tipReceivedList'])->name('teacher.tip.received');
     // Profile
     Route::get('/view-profile/{id}', [App\Http\Controllers\Teacher\profileController::class,'viewProfile'])->name('teacher.view.profile');
     Route::get('/profile/edit{id}', [App\Http\Controllers\Teacher\profileController::class,'ProfileEdit'])->name('teacher.profile.edit');
